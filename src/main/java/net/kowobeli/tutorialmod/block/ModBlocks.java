@@ -2,6 +2,7 @@ package net.kowobeli.tutorialmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kowobeli.tutorialmod.TutorialMod;
+import net.kowobeli.tutorialmod.block.custom.MagicBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
@@ -33,6 +34,9 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
+    public static final Block MAGIC_BLOCK = registerBLock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
+
     private static Block registerBLock(String name, Block block){
         registerBLockItem(name, block);
         return  Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
@@ -50,6 +54,7 @@ public class ModBlocks {
             entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
             entries.add(ModBlocks.PINK_GARNET_ORE);
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+            entries.add(ModBlocks.MAGIC_BLOCK);
         });
     }
 }

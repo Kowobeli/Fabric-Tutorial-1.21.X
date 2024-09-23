@@ -18,6 +18,9 @@ public class ModItems {
 
     public static final Item CHISEL = registerItem("chisel", new ChiselItem(new Item.Settings().maxDamage(32)));
 
+    public static final Item MAGIC_BLOCK = registerItem("magic_block", new Item(new Item.Settings()));
+
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID, name), item);
     }
@@ -30,6 +33,8 @@ public class ModItems {
             entries.add(RAW_PINK_GARNET);
             entries.add(PINK_GARNET_ORE);
             entries.add(PINK_GARNET_DEEPSLATE_ORE);
+            entries.add(MAGIC_BLOCK);
+
         });
     }
 }
